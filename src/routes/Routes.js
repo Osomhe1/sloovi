@@ -3,9 +3,6 @@ import LazyLoading from '../components/LazyLoading';
 
 const Soolvi = LazyLoading(() => import('../pages/soolvi'));
 
-// err handlers
-// const NotFound = LazyLoading(() => import('../pages/NotFound'));
-
 const AppRoutes = () => {
     let allRoutes = useRoutes([
         {

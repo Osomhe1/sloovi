@@ -33,19 +33,7 @@ const Soolvi = () => {
     const getTasks = useSelector((state) => state.reducer.allTasks);
     const singleTask = useSelector((state) => state.reducer.singleTask);
 
-    useEffect(() => {
-        if (status !== 'FULFILLED') {
-            LoginHandle(dispatch, setAllTask);
-        } else {
-            allTaskHandle(
-                dispatch,
-                userData.results.token,
-                userData.results.company_id,
-                setAllTask
-            );
-        }
-    }, []);
-
+    //
     let date = new Date();
     const save = () => {
         const info = {
@@ -91,6 +79,20 @@ const Soolvi = () => {
             ...newValue,
         });
     }
+    //
+    useEffect(() => {
+        if (status !== 'FULFILLED') {
+            LoginHandle(dispatch, setAllTask);
+        } else {
+            allTaskHandle(
+                dispatch,
+                userData.results.token,
+                userData.results.company_id,
+                setAllTask
+            );
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     return (
         <div className="flex flex-col md:flex-row items-center h-[100%] mb-8">
